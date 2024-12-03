@@ -32,6 +32,9 @@ public class LineComparison {
 
         // USE CASE 2 - Equality of the Lines
         areLinesEqual(len1, len2);
+
+        // USE CASE 3 - Comparison of the Lines
+        greaterEqualOrLessThan(len1, len2);
     }
 
     /*
@@ -68,6 +71,26 @@ public class LineComparison {
         }
     }
 
+    /*
+        USE CASE 3
+        As a fan of geometry, I want to compare two lines based on the end points, So that I know if one line is equal, greater or less than the other line.
+
+        - Using Java compareTo method to compare 2 Lengths is preferable.
+    */
+    public static void greaterEqualOrLessThan(double len1, double len2){
+        String LineA = String.valueOf(len1);
+        String LineB = String.valueOf(len2);
+        int compare = LineA.compareTo(LineB);
+        System.out.println("Value returned from compareTo function : " + compare);
+
+        if(compare == 0) {
+            System.out.println("Both the Lines are equal");
+        } else if(compare > 0) {
+            System.out.println("Line 1 is greater then Line 2");
+        } else {
+            System.out.println("Line 1 is less than Line 2");
+        }
+    }
 }
 
 
